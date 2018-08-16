@@ -3,3 +3,4 @@ Entity Linking with a Knowledge Base:Issues, Techniques, and Solutions
 
 Entity Disambiguation with Web Links: (nel)  
 - http://aclweb.org/anthology/Q15-1011  
+- Github: https://github.com/wikilinks/nel

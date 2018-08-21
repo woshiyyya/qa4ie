@@ -59,7 +59,7 @@ bash startup.sh
 ### 更改JVM最大堆内存参数 **（有问题）**
 在catalina.sh 添加,(这里设置了40G) 
 ```
-JAVA_OPS="-Xmx40960m"
+JAVA_OPTS="-server -Xmx40960m"
 ```
 
 ## 4. 安装scala

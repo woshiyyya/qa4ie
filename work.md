@@ -76,5 +76,15 @@ export PATH=${SCALA_HOME}/bin:$PATH
 激活profile，输入scala测试是否安装成功。
 
 ## 5.安装配置Spark
+官网下载 http://spark.apache.org/downloads.html   
+解压到 /usr/lib/spark 目录  
+修改 /etc/profile
+```
+export SPARK_HOME=/usr/lib/spark/spark-2.3.1-bin-hadoop2.7
+export PATH=${SPARK_HOME}/bin:$PATH
+```
+
+### python 中使用pyspark 
+参见 https://blog.csdn.net/u010171031/article/details/51849562
 
 ## 6. 安装nel及sift库

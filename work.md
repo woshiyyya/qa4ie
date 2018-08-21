@@ -88,3 +88,22 @@ export PATH=${SPARK_HOME}/bin:$PATH
 参见 https://blog.csdn.net/u010171031/article/details/51849562
 
 ## 6. 安装nel及sift库
+安装sift
+```
+pip install git+http://git@github.com/wikilinks/sift.git
+```
+出错： EnvironmentError: mysql_config not found，原因是没有安装 libmysqlclient-dev
+```
+sudo apt-get install libmysqlclient-dev
+```
+又报GCC的错
+```
+sudo apt-get install gcc
+sudo apt-get install build-essential
+```
+
+
+
+
+
+

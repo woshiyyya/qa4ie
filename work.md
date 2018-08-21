@@ -104,7 +104,23 @@ sudo apt-get install gcc
 sudo apt-get install build-essential
 ```
 
+## 7.解决库错误
+```python
+import nel
+>>> No module named en
+```
+是没有安装英文包，终端输入
+```
+python -m spacy download en
+```
+再次import仍然报错 No module named en  
 
+手动修改 /home/yunxuanxiao/anaconda3/envs/py2/lib/python2.7/site-packages/nel/features/recognition.py
+```python
+form spacy.en import English
+改为
+from spacy.lang.en import English
+```
 
 
 

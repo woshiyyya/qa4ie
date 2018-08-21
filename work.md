@@ -61,6 +61,20 @@ bash startup.sh
 JAVA_OPS="-Xmx40960m"
 ```
 
-3.安装配置Spark
+## 4. 安装scala
+从 https://www.scala-lang.org/download/ 找到压缩包
+```
+sudo mkdir /sur/lib/scala
+sudo tar -zxvf scala-2.12.6.tgz -C /usr/lib/scala
+```
 
-4. 安装nel及sift库
+打开/etc/profile, 在最后添加配置
+```
+export SCALA_HOME=/usr/lib/scala/scala-2.12.6
+export PATH=${SCALA_HOME}/bin:$PATH
+```
+激活profile，输入scala测试是否安装成功。
+
+## 5.安装配置Spark
+
+## 6. 安装nel及sift库

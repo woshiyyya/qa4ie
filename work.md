@@ -56,7 +56,7 @@ bash startup.sh
 若出现cannot touch /usr/share/tomcat8/log/catalina.out, 手动建立logs文件夹并修改权限  
 启动成功！
 
-### 更改JVM最大堆内存参数
+### 更改JVM最大堆内存参数 **（有问题）**
 在catalina.sh 添加,(这里设置了40G) 
 ```
 JAVA_OPS="-Xmx40960m"

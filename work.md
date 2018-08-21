@@ -9,6 +9,7 @@ python2环境下按教程安装nel
 
 
 # 从头开始配置nel
+想用别人的轮子真的是困难，在gpu18上新开账号，记录配置过程
 ## 1.安装anaconda3
 下载anaconda3 （https://www.anaconda.com/download/#linux）
 ```
@@ -91,6 +92,7 @@ export PATH=${SPARK_HOME}/bin:$PATH
 安装sift
 ```
 pip install git+http://git@github.com/wikilinks/sift.git
+pip install git+http://git@github.com/wikilinks/nel.git
 ```
 出错： EnvironmentError: mysql_config not found，原因是没有安装 libmysqlclient-dev
 ```

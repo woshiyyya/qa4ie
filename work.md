@@ -8,8 +8,8 @@ python2环境下按教程安装nel
 
 
 
-从头开始配置
-1.安装anaconda3
+# 从头开始配置nel
+## 1.安装anaconda3
 下载anaconda3 （https://www.anaconda.com/download/#linux）
 ```
 wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh
@@ -20,7 +20,7 @@ bash Anaconda3-5.2.0-Linux-x86_64.sh
 conda create -n py2 python=2.7
 ```
 
-2.安装配置JAVA
+## 2.安装配置JAVA
 下载jdk8_xxx.tar.gz
 ```
 tar -xzvf jdk8_xxx.tar.gz
@@ -42,7 +42,24 @@ source /etc/profile
 java -version
 ```
 
-3.安装配置TOMCAT
+## 3.安装配置TOMCAT
+```
+sudo apt-get install tomcat8 tomcat8-docs tomcat8-examples tomcat8-admin
+```
+安装目录为 **/usr/share/tomcat8**
+```
+sudo chmod 777 -R tomcat8
+cd tomcat8/bin
+bash startup.sh
+```
+若出现cannot touch /usr/share/tomcat8/log/catalina.out, 手动建立logs文件夹并修改权限  
+启动成功！
+
+### 更改JVM最大堆内存参数
+在catalina.sh 添加,(这里设置了40G) 
+```
+JAVA_OPS="-Xmx40960m"
+```
 
 3.安装配置Spark
 

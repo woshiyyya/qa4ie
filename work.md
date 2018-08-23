@@ -56,11 +56,21 @@ bash startup.sh
 若出现cannot touch /usr/share/tomcat8/log/catalina.out, 手动建立logs文件夹并修改权限  
 启动成功！
 
-### 更改JVM最大堆内存参数 **（有问题）**
-在catalina.sh 添加,(这里设置了40G) 
+### 更改JVM最大堆内存参数 ~~**（有问题）**~~ 已解决
+
+在catalina.sh 添加,(这里设置了4G) 
 ```
-JAVA_OPTS="-server -Xmx40960m"
+JAVA_OPTS="-Xms1024m -Xmx4090m"
 ```
+还是报错GC overhead limited！！ 这个大坑  
+最终发现是SPARK的问题，而且并不是worker的内存不够，而是driver
+
+## 解决方法
+在$SPARK_HOME/conf/目录中，将spark-defaults.conf.template模板文件拷贝一份到/spark_home/conf目录下，命名为spark-defaults.conf，然后在里面设置spark.driver.memory  memSize属性来改变driver内存大小。
+```
+spark.driver.memory                5g
+```
+
 
 ## 4. 安装scala
 从 https://www.scala-lang.org/download/ 找到压缩包

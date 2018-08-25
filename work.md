@@ -94,6 +94,14 @@ export PATH=${SCALA_HOME}/bin:$PATH
 export SPARK_HOME=/usr/lib/spark/spark-2.3.1-bin-hadoop2.7
 export PATH=${SPARK_HOME}/bin:$PATH
 ```
+### SPARK默认参数
+进入$SPARK_HOME/conf文件夹，拷贝一份spark-default.conf,添加
+```
+spark.driver.memory  10g
+spark.executor.memory 2g
+spark.maxResultSize  10g
+```
+
 
 ### python 中使用pyspark 
 参见 https://blog.csdn.net/u010171031/article/details/51849562
@@ -131,7 +139,12 @@ form spacy.en import English
 改为
 from spacy.lang.en import English
 ```
-
+修改 /home/yunxuanxiao/anaconda3/envs/py2/lib/python2.7/site-packages/nel/process/tag.py 第47行
+```python
+self.spacy_model = spacy_model or 'en_default'
+改为
+self.spacy_model = spacy_model or 'en'
+```
 
 
 
